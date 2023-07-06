@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+    <body>
+          <h1>3</h1>
+          <textarea>js
+            <html>  
+<head>  
+<script>  
+function validate()  
+{  
+var name = document.forms["RegForm"]["Name"];  
+var email = document.forms["RegForm"]["EMail"]; 
+var phone = document.forms["RegForm"]["Telephone"]; 
+var what = document.forms["RegForm"]["Subject"]; 
+var password = document.forms["RegForm"]["Password"]; 
+var address = document.forms["RegForm"]["Address"];  
+   if (name.value == "")  
+{  
+window.alert("Please enter your name.");  
+name.focus();  
+return false;  
+}  
+if (address.value == "")  
+{  
+window.alert("Please enter your address.");  address.focus();  
+return false;  
+}  
+if (email.value == "")  
+{  
+window.alert("Please enter a valid e-mail address."); 
+email.focus();  
+return false;  
+}  
+if (phone.value == "")  
+{  
+window.alert("Please enter your telephone number.");  phone.focus();  
+return false;  
+}  
+if (password.value == "")  
+{ 
+window.alert("Please enter your password");  password.focus();  
+return false;  
+}  
+if (what.selectedIndex< 1)  
+{  
+alert("Please enter your course.");  
+what.focus();  
+return false;  
+}  
+return true;  
+}  
+</script>  
+<style>  
+div  
+{  
+box-sizing: border-box;  
+width: 100%; 
+border: 100px solid black;  
+float: left;  
+align-content: center;  
+align-items: center;  
+}  
+h1  
+{  
+text-align: center  
+}  
+form  
+{  
+margin: 0 auto;  
+width: 600px;  
+}  
+</style>  
+</head>  
+<body>  
+<h1> REGISTRATION FORM </h1>  
+<form name="RegForm" action="" onsubmit="return validate()" method="post">  
+    <p>Name: <input type="text" size=65 name="Name"></p><br>  
+    <p> Address: <input type="text" size=65 name="Address"></p><br>
+      <p>E-mail Address: <input type="text" size=65 name="EMail"></p><br>  
+      <p>Password: <input type="text" size=65 name="Password"></p><br>
+        <p>Telephone: <input type="text" size=65 name="Telephone"></p><br>
+          <p>Select Your Course  
+<select type="text" value="" name="Subject">  
+    <option>select</option>  
+    <option>CSE</option>  
+<option>ECE</option>  
+<option>EEE</option> 
+<option>MECH</option>  
+<option>CIVIL</option>  
+</select></p><br><br>  
+<p>Comments: <textarea rows="10" name="Comment"></textarea></p> 
+ <p><input type="submit" value="SUBMIT" name="Submit">  
+    <input type="reset" value="RESET" name="Reset">  
+
+</p>
+
+</form>  
+</body>  
+</html>
+
+     </textarea>     
+<p>-------------------------------------------------------------------------------------------------------------------</p>
+     <h1>database insert in wamp server-7bla varuthu</h1>
+
+<textarea>
+    <?php
+// Database connection settings
+$hostname = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'my_database';
+
+// Connect to the database
+$conn = new mysqli($hostname, $username, $password, $database);
+if ($conn->connect_error) {
+    die('Connection failed: ' . $conn->connect_error);
+}
+
+// Get data from a form (assuming a form with input fields named "name" and "email")
+$name = $_POST['name'];
+$email = $_POST['email'];
+
+// Insert data into the database
+$sql = "INSERT INTO users (name, email) VALUES ('$name', '$email')";
+if ($conn->query($sql) === TRUE) {
+    echo "Data saved successfully!";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+// Close the database connection
+$conn->close();
+?>
+------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Project</title>
+</head>
+<body>
+    <h1>Welcome to my project!</h1>
+    <p>This is a simple HTML page served by WAMP Server.</p>
+
+    <h2>Enter your details:</h2>
+    <form action="save_data.php" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required><br>
+
+        <input type="submit" value="Save">
+    </form>
+</body>
+</html>
+
+</textarea>
+<p>-------------------------------------------------------------------------------------------------------------------</p>
+<h1>7a</h1>
+<textarea>
+    Program:
+email.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Email Validation</title>
+<style>
+h1,div{text-align:center;}
+</style>
+</head>
+<body>
+<h1>Email Validation using Regular Expression</h1>
+<div>
+<form action="emailvalidate.php" method="get">
+Email:<input type="text" name="email"><br><br>
+<input type="submit" value="Submit">
+</form>
+</div>
+</body>
+</html>
+emailvalidate.php
+<?php
+$email=$_GET['email'];
+functionvalid_email($str)
+{
+$patt="/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix";
+return (!preg_match($patt, $str)) ? FALSE : TRUE;
+}
+if(valid_email($email))
+{
+echo "valid email address.";
+}
+else
+{
+echo "Invalid email address.";
+}?>
+
+</textarea>
+<p>-------------------------------------------------------------------------------------------------------------------</p>
+
+<h1>10-trian tickect</h1>
+
+<textarea>
+    Program:
+app.js
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<title>Ticket Reservation Application</title>
+<script src="js/angular.js"></script>
+</head>
+<body ng-controller="myCtrl">
+<h1>Ticket Reservation Application</h1>
+<form id="myform" method="post">
+<label for="name">Name</label>
+<input type="text" ng-model="name"><br><br>
+<label for="email">Email id</label>
+<input type="email" ng-model="email"><br><br>
+<label for="phone">Phone </label>
+<input type="text" ng-model="phone"><br><br>
+<label for="noofticket">No of Ticket </label>
+<input type="text" ng-model="noofticket"><br><br>
+<label for="destination">Destination </label>
+<select ng-model="selectedDest" ng-options="x.c for x in destination">
+</select><br><br>
+<label for="amount">Amount </label>
+<span>{{amount=selectedDest.rate*noofticket}}</span>
+<br><br>
+<button ng-click="save()">Book Ticket</button>
+<h1>{{myWelcome}}</h1>
+</form>
+</body>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope,$http) {
+$scope.destination = [{ "c":"USA", "rate": 10000
+}, { "c":"RUSSIA", "rate": 20000
+}, { "c":"ENGLAND", "rate": 30000
+}];
+$scope.selectedDest = $scope.destination[0];
+$scope.save = function () {
+$http.post(
+"save.php", {
+'name':$scope.name,
+'email': $scope.email,
+'phone':$scope.phone,
+31
+'noofticket':$scope.noofticket,
+'destination' : $scope.selectedDest.c,
+'amount': $scope.amount
+},
+'application/x-www-form-urlencoded;charset=utf-8;' ).then(function mySuccess(response) {
+$scope.myWelcome = response.data;
+$scope.name = "";
+$scope.email = "";
+$scope.phone = "";
+$scope.noofticket = "";
+$scope.amount = "";
+});
+}
+});
+</script>
+</html>
+Save.php
+<?php
+$con = new mysqli("localhost", "root", "", "angulardb");
+if (mysqli_connect_errno()) {
+echo "Failed to connect to MySQL: " . mysqli_connect_error();
+exit();
+}
+$data = json_decode(file_get_contents("php://input"));
+$name = mysqli_real_escape_string($con,$data->name);
+$email = mysqli_real_escape_string($con,$data->email);
+$phone = mysqli_real_escape_string($con,$data->phone);
+$noofticket = mysqli_real_escape_string($con,$data->noofticket);
+$destination = mysqli_real_escape_string($con,$data->destination);
+$amount = mysqli_real_escape_string($con,$data->amount);
+$sql="INSERT INTO `ticket`(`name`, `email`, `phone`, `noofticket`, `destination`, `amount`) VALUES
+('$name','$email','$phone','$noofticket','$destination','$amount')";
+if ($con -> query($sql)) {
+echo("Your Ticket Booked");
+}
+else
+{
+echo("Something issue".$con->error);
+}
+?>
+
+
+</textarea>
+
+<p>-------------------------------------------------------------------------------------------------------------------</p>
+<h1>4a-invoke servlet</h1>
+<textarea>
+    Program:  
+Index.html  
+<!DOCTY<head>  
+<meta charset="ISO-8859-1">  
+<title>My Page title</title>  
+<style>  
+h1  
+{  
+color:blue;  
+}  
+</style>  PE html>  
+<html>  
+
+</head>  
+<body>  
+<h1><center>INVOKING SERVLETS FROM HTML</center></h1>  <form action="MyServlet">  
+Name:<input type="text" name="name">  
+<input type="submit" value="Go">  
+</form>  
+</body>  
+</html> 
+MyServlet.java  
+package com.IPLAB;  
+import java.io.IOException;  
+import java.io.PrintWriter;  
+import javax.servlet.http.HttpServlet;  
+import javax.servlet.http.HttpServletRequest;  
+import javax.servlet.http.HttpServletResponse;  
+public class Myservlet extends HttpServlet{  
+public void doGet(HttpServletRequest req,HttpServletResponse res) throws IOException  {  
+res.setContentType("text/html");  
+String i = req.getParameter("name"); 
+PrintWriter out=res.getWriter();  
+out.println("<html>");  
+out.println("<body>");  
+out.println("<p style='color:red;font-size: 20px;'>");  
+out.println(i);  
+out.println("</p>");  
+out.println("</body>");  
+out.println("</html>");  
+}  
+} 
+web.xml  
+<?xml version="1.0" encoding="UTF-8"?>  
+<web-app xmlns:xsi=http://www.w3.org/2001/XMLSchema-instance  
+xmlns="http://xmlns.jcp.org/xml/ns/javaee"  
+xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web app_3_1.xsd" id="WebApp_ID"  
+version="3.1">  
+<servlet>  
+<servlet-name>abc</servlet-name>  
+<servlet-class>com.IPLAB.Myservlet</servlet-class>  
+</servlet>  
+<servlet-mapping>  
+<servlet-name>abc</servlet-name>  
+<url-pattern>/MyServlet</url-pattern>  
+</servlet-mapping>  
+</web-app>
+
+</textarea>
+
+<p>-------------------------------------------------------------------------------------------------------------------</p>
+
+
+<p>
+    Angular and Node.js are both popular technologies used in web development, but they serve different purposes:
+    
+    Angular:
+    
+    Angular is a JavaScript framework developed and maintained by Google.
+    It is used for building dynamic and robust web applications.
+    Angular follows the Model-View-Controller (MVC) architectural pattern, which helps in organizing code and separating concerns.
+    It provides a rich set of features for building single-page applications (SPAs), including data binding, dependency injection, component-based architecture, and routing.
+    Angular applications are typically written in TypeScript, a statically typed superset of JavaScript.
+    Node.js:
+    --------------------------------------------------
+    Node.js is an open-source JavaScript runtime environment built on Chrome's V8 JavaScript engine.
+    It allows developers to run JavaScript on the server-side.
+    Node.js enables building scalable and high-performance applications, particularly in scenarios that require handling a large number of concurrent connections.
+    It provides an event-driven, non-blocking I/O model, which makes it well-suited for building real-time applications and APIs.
+    Node.js has a vast ecosystem of modules available through npm (Node Package Manager) that allows developers to easily integrate third-party libraries and tools into their applications.</p>
+    </body>
+</html>
